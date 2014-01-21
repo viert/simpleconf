@@ -33,7 +33,7 @@ func ParseConfig(filename string) (*ConfigParser, error) {
 	reader := bufio.NewReader(file)
 	for {
 		line, err := reader.ReadString('\n')
-		if (err != nil) { break }
+		if (err != nil && line == "") { break }
 
 		// removing comments
 		found := strings.Index(line, "#")
