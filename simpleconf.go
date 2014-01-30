@@ -18,7 +18,7 @@ type KeyError struct {
 }
 
 func (ke *KeyError) Error() string {
-	return fmt.Sprintf("KeyError: %s", ke.Key)
+	return fmt.Sprintf("Option '%s' not found in config file", ke.Key)
 }
 
 func ParseConfig(filename string) (*ConfigParser, error) {
